@@ -184,8 +184,7 @@
       "name": "[variables('vmName1')]",
       "location": "[parameters('location')]",
       "dependsOn": [
-        "[resourceId('Microsoft.Storage/storageAccounts/', variables('storageAccountName1'))]",
-        "[resourceId('Microsoft.Network/networkInterfaces/', variables('nicName1'))]"
+        "[resourceId('Microsoft.Storage/storageAccounts/', variables('storageAccountName1'))]"
       ],
       "properties": {
         "hardwareProfile": {
