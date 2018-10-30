@@ -50,11 +50,11 @@
     "subnetName": "Subnet",
     "subnetPrefix": "10.0.0.0/24",
     "publicIPAddressName1": "myPublicIP1",
-    "vmName1": "SimpleWinVM1",
+    "vmName1": "winvm1",
     "storageAccountName2": "[concat(uniquestring(resourceGroup().id), 'sawinvm2')]",
     "nicName2": "myVMNic2",
     "publicIPAddressName2": "myPublicIP2",
-    "vmName2": "SimpleWinVM2",
+    "vmName2": "winvm2",
     "virtualNetworkName": "MyVNET",
     "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]"
   },
@@ -89,7 +89,7 @@
       "properties": {
         "publicIPAllocationMethod": "Dynamic",
         "dnsSettings": {
-          "domainNameLabel": "[parameters('dnsLabelPrefix')]"
+          "domainNameLabel": "[concat(parameters('dnsLabelPrefix'),variables('vmName1'))]"
         }
       }
     },
@@ -101,7 +101,7 @@
       "properties": {
         "publicIPAllocationMethod": "Dynamic",
         "dnsSettings": {
-          "domainNameLabel": "[parameters('dnsLabelPrefix')]"
+          "domainNameLabel": "[concat(parameters('dnsLabelPrefix'),variables('vmName2'))]"
         }
       }
     },
@@ -185,7 +185,7 @@
       "location": "[parameters('location')]",
       "dependsOn": [
         "[resourceId('Microsoft.Storage/storageAccounts/', variables('storageAccountName1'))]",
-        "[resourceId('Microsoft.Network/networkInterfaces/', variables('nicName'1))]"
+        "[resourceId('Microsoft.Network/networkInterfaces/', variables('nicName1'))]"
       ],
       "properties": {
         "hardwareProfile": {
@@ -284,7 +284,7 @@
   "outputs": {
     "hostname": {
       "type": "string",
-      "value": "[reference(variables('publicIPAddressName')).dnsSettings.fqdn]"
+      "value": "[reference(variables('publicIPAddressName1')).dnsSettings.fqdn]"
     },
     "hostname2": {
       "type": "string",
