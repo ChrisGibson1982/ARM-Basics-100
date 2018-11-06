@@ -7,5 +7,10 @@
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 
-## Example Deployment Command
+## Example PowerShell Deployment Command
 New-AzureRmResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup -TemplateUri https://raw.githubusercontent.com/ChrisGibson1982/ARM-Basics-100/master/ARM-Basics-100/azuredeploy.json  -TemplateParameterUri https://raw.githubusercontent.com/ChrisGibson1982/ARM-Basics-100/master/ARM-Basics-100/azuredeploy.parameters.json
+
+## Example Azure Cli Deployment Command
+az account set --subscription 'SUBSCRIPTION NAME'
+
+az group deployment create --resource-group ExampleResourceGroup --template-file azuredeploy.json --parameters azuredeploy.parameters.json
