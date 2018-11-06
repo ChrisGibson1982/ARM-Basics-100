@@ -1,5 +1,7 @@
 # Broken deployment of Windows VMs behind a load balancer
 
+There are 3 issues with this template that need to be resolved.  All produce error messages.
+
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com/ChrisGibson1982/ARM-Basics-100/master/ARM-Basics-100/azuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
