@@ -7,5 +7,6 @@
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 
-*Example Deployment Command*
+## Example Deployment Command
+
 New-AzureRmResourceGroupDeployment -Name 'AB100-Deployment' -ResourceGroupName 'AB100-RG' -TemplateUri Https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json  -TemplateParameterUri Https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.parameters.json
